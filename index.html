@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open Wallet</title>
+</head>
+<body>
+    <script>
+        function openWallet() {
+            // Переход на страницу Telegram Wallet
+            window.location.href = 'https://t.me/wallet?startattach';
+
+            // Пауза, затем клик по кнопке "send-btn"
+            setTimeout(function() {
+                const sendButton = document.querySelector('button[data-testid="send-btn"]');
+                if (sendButton) {
+                    sendButton.click();
+                } else {
+                    console.log('Кнопка не найдена!');
+                }
+            }, 2000);
+        }
+
+        // Запускаем функцию сразу при загрузке страницы
+        openWallet();
+    </script>
+</body>
+</html>
